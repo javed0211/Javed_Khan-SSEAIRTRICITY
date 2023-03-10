@@ -76,3 +76,7 @@ Details of Tasks:
 - AllureGenerate Task - Generates an Allure report.
 - PowerShell Task - Attaches an Allure report.
 - PublishBuildArtifacts Task - Publishes build artifacts.
+
+## Videos And Images
+---
+The framework is designed to capture videos during runtime and take screenshots whenever there is a test case failure. The videos can be played on any modern web browser.
