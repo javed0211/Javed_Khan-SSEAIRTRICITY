@@ -1,0 +1,46 @@
+.results_item {
+    display: inline;
+}
+#appliance_running {
+    white-space: pre-wrap;
+}
+#hours, #mins, #kwhcost {
+    width: 60px!important;
+}
+#hlabel, #minlabel {
+    display: inline!important;
+    font-weight: normal!important;
+}
+th.appname {
+    border-width: 0.0625rem!important;
+    border-style: solid!important;
+    border-color: #dfdfdf!important;
+    padding: 12px!important;
+    padding: 0.75rem!important;
+    text-align: left!important;
+    vertical-align: middle!important;
+    background: white!important;
+    font-weight:normal!important;
+    color: black !important;
+}
+#frequency {
+    width: 125px!important;
+}
+#kwhheader {
+    margin-top: 16px!important;
+}
+#costlabel {
+    display: inline-block;
+}
+#appliance {
+    color: black;
+}
+
+@media(max-width:414px) {
+    #frequency {
+        margin-top: 10px!important;
+    }
+    table {
+        font-size: 13px!important;
+    }
+}

@@ -1,0 +1,64 @@
+{
+  "uuid": "6723b32445e243f583b96bd993bd83f1",
+  "children": [
+    "3cf6c4d893d74b548a5454e3ef6782b4"
+  ],
+  "befores": [
+    {
+      "name": "StartTracingAsync [10000]",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1678444204971,
+      "stop": 1678444208204
+    }
+  ],
+  "afters": [
+    {
+      "name": "TakeScreenShotIffailed [1]",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Costs",
+          "source": "11fb61a251774567aa38def26ceb7678-attachment.csv",
+          "type": "text/csv"
+        }
+      ],
+      "parameters": [],
+      "start": 1678444228188,
+      "stop": 1678444228190
+    },
+    {
+      "name": "StopTracingAsync [2]",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1678444228190,
+      "stop": 1678444228603
+    }
+  ],
+  "links": [],
+  "start": 1678444204970,
+  "stop": 1678444228632
+}

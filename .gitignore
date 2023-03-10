@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/SmartScript/Videos
+/SmartScript/bin
+/SmartScript/obj
+node_modules
+testresults
+.vs
+.DS_Store
+.idea

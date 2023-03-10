@@ -1,0 +1,134 @@
+{
+  "uuid": "3cf6c4d893d74b548a5454e3ef6782b4",
+  "historyId": "Get energy cost610462762",
+  "fullName": "Get energy cost",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "HP-OMEN"
+    },
+    {
+      "name": "feature",
+      "value": "HomeAppliancesCost"
+    },
+    {
+      "name": "tag",
+      "value": "Cost"
+    },
+    {
+      "name": "tag",
+      "value": "Appliances"
+    },
+    {
+      "name": "suite",
+      "value": "1234"
+    },
+    {
+      "name": "subSuite",
+      "value": "TC-1234"
+    }
+  ],
+  "links": [
+    {
+      "name": "Story-Story:1234",
+      "url": "https://dev.azure.com/_workitems/edit/Story:1234",
+      "type": "Story"
+    },
+    {
+      "name": "TC-TC:TC-1234",
+      "url": "https://dev.azure.com/_workitems/edit/TC:TC-1234",
+      "type": "TestCase"
+    }
+  ],
+  "name": "Get energy cost",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  The Home appliance cost calculator is running",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1678444208389,
+      "stop": 1678444225320
+    },
+    {
+      "name": "Given  I am a resident from 'England'",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1678444225320,
+      "stop": 1678444225900
+    },
+    {
+      "name": "When  I add the '8' appliances and its average usage and the national average rate '34'",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1678444225900,
+      "stop": 1678444228149
+    },
+    {
+      "name": "Then  I should get the results table with daily, weekly, monthly, and yearly cost",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1678444228149,
+      "stop": 1678444228186
+    }
+  ],
+  "attachments": [],
+  "parameters": [
+    {
+      "name": "country",
+      "value": "England"
+    },
+    {
+      "name": "NoOfAppliances",
+      "value": "8"
+    },
+    {
+      "name": "avgRate",
+      "value": "34"
+    }
+  ],
+  "start": 1678444208287,
+  "stop": 1678444228188
+}

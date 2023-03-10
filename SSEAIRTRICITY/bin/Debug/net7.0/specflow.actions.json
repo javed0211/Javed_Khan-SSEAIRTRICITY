@@ -1,0 +1,153 @@
+{
+  "playwright": {
+    "browser": "chrome",
+    "url": "https://www.citizensadvice.org.uk/consumer/energy/energy-supply/get-help-paying-your-bills/check-how-much-your-electrical-appliances-cost-to-use/",
+    "arguments": [
+      "--start-maximized"
+    ],
+    "appliances": [
+      {
+        "name": "Broadband router",
+        "time": "60"
+      },
+      {
+        "name": "Dehumidifier",
+        "time": "120"
+      },
+      {
+        "name": "Dishwasher",
+        "time": "67"
+      },
+      {
+        "name": "DVD or Blu-ray player",
+        "time": "95"
+      },
+      {
+        "name": "Electric blanket",
+        "time": "52"
+      },
+      {
+        "name": "Electric car charger (wallbox)",
+        "time": "10"
+      },
+      {
+        "name": "Extractor fan",
+        "time": "5"
+      },
+      {
+        "name": "Fan heater",
+        "time": "25"
+      },
+      {
+        "name": "Games console",
+        "time": "30"
+      },
+      {
+        "name": "Grill or hob (electric)",
+        "time": "35"
+      },
+      {
+        "name": "Hairdryer",
+        "time": "40"
+      },
+      {
+        "name": "Immersion heater",
+        "time": "60"
+      },
+      {
+        "name": "Iron",
+        "time": "70"
+      },
+      {
+        "name": "Kettle",
+        "time": "96"
+      },
+      {
+        "name": "Lawnmower (electric)",
+        "time": "60"
+      },
+      {
+        "name": "Light bulb - energy-saving CFL",
+        "time": "24"
+      },
+      {
+        "name": "Light bulb - energy-saving LED",
+        "time": "78"
+      },
+      {
+        "name": "Microwave",
+        "time": "98"
+      },
+      {
+        "name": "Oven",
+        "time": "96"
+      },
+      {
+        "name": "Panel heater or electric fire (not central heating)",
+        "time": "63"
+      },
+      {
+        "name": "PC or desktop computer",
+        "time": "85"
+      },
+      {
+        "name": "Phone or tablet charger",
+        "time": "52"
+      },
+      {
+        "name": "Shower (electric)",
+        "time": "41"
+      },
+      {
+        "name": "Slow cooker",
+        "time": "74"
+      },
+      {
+        "name": "Toaster",
+        "time": "32"
+      },
+      {
+        "name": "Towel rail",
+        "time": "65"
+      },
+      {
+        "name": "Tumble dryer",
+        "time": "98"
+      },
+      {
+        "name": "TV",
+        "time": "78"
+      },
+      {
+        "name": "TV box - for example a Sky or Virgin box",
+        "time": "45"
+      },
+      {
+        "name": "Vacuum cleaner",
+        "time": "12"
+      },
+      {
+        "name": "Washing machine",
+        "time": "95"
+      }
+
+    ],
+    "defaultTimeout": 60,
+    "headless": false,
+    "traceDir": "traces",
+    "runOnBrowserstack": true,
+    "bsCapabilities": {
+      "userKey": "",
+      "accessToken": "",
+      "local": true,
+      "build": "SSE Tests"
+    },
+    "bsDevice": {
+      "device": "iPhone",
+      "os": "iOS",
+      "version": "16.0",
+      "browser": "Safari",
+      "browserVersion": "15"
+    }
+  }
+}

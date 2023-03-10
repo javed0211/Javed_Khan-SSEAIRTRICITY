@@ -1,0 +1,96 @@
+trigger:
+  branches:
+    include:
+    - master
+
+parameters:
+- name: modules
+  type: string
+  default: $(ModulesToRun)
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: Any CPU
+  buildConfiguration: Release
+
+stages:
+- stage: __default
+  jobs:
+  - job: Job
+    pool:
+      vmImage: 'windows-latest'
+   
+    steps:
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          [string] $buildName = "SSEAIRTRICITY"+"$env:_VERSIONNUMBER" + "_$(Build.SourceBranchName)" + "_$(Build.BuildNumber)"
+
+          Write-Host "Setting the name of the build to '$buildName'."
+          Write-Host "vso[build.updatebuildnumber]$buildName"
+
+    - task: NuGetToolInstaller@1
+      inputs:
+        versionSpec: 5.4.x
+        checkLatest: true
+      displayName: Update Nuget Installer
+
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'restore'
+        projects: '**/*.csproj'
+        feedsToUse: 'select'
+        vstsFeed: 'b51dff8c-7cac-4fb9-b9fd-963330dec56c/77493af7-1e0a-46a4-b8bc-465b5ee3b0dd'
+      displayName: Restore Project
+
+
+    - task: PowerShell@2
+      displayName: Update Browser
+      inputs:
+        filePath: '.\SmartScript\BrowserUpdate.ps1'
+        arguments: '-browser $(Browser)'
+
+    - task: VSBuild@1
+      inputs:
+        solution: $(solution)
+        msbuildArgs: >-
+          /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"
+        platform: $(buildPlatform)
+        configuration: $(buildConfiguration)
+      displayName: Build the project
+      condition: always()
+
+
+    - script: |
+        set "modules=$(ModulesToRun)"
+        echo Running test on module: %%a
+        for %%a in (%modules%) do (
+        start .\DOTAutomationCore\ExecuteModule.bat %%a
+        )
+
+    - task: AllureGenerate@1
+      inputs:
+        resultsDir: '.\SSEAIRTRICITY\allureResults'
+        targetDir: '..\a\allure-report\$(Build.BuildNumber)'
+      condition: always()
+
+    - task: PowerShell@2
+      inputs:
+        targetType: inline
+        script: >-
+          allure generate ".\SSEAIRTRICITY\allureResults" -o "..\a\allure-report\$(Build.BuildNumber)" --clean
+      displayName: Allure Report
+      condition: always()
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'Execution Report'
+        publishLocation: 'Container'
+      displayName: Attach Artifect to build
+      condition: always()
+
+
+ 
+
