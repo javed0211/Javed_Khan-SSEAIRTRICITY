@@ -80,3 +80,7 @@ Details of Tasks:
 ## Videos And Images
 ---
 The framework is designed to capture videos during runtime and take screenshots whenever there is a test case failure. The videos can be played on any modern web browser.
+
+## Azure DevOps API Integration
+---
+The framework has been integrated with Azure DevOps APIs, allowing it to create a test suite prior to execution and update the test outcome once the scenario has been completed. In the event of failures, it has the capability to raise a defect. Essentially, it is capable of performing many of the tasks that can be done through the Azure DevOps UI.
