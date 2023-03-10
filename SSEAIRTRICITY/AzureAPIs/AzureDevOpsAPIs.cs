@@ -28,7 +28,7 @@ namespace Utilities.AzureDevOpsAPIs
     {
 
         private readonly string TFUrl = "https://bupaukmudynamics.visualstudio.com/"; // for devops azure 
-        private readonly string UserPAT; //"fw4gw2mysuzm5d5k46lnxygg7246ug3d7u3znobw42jd4bhxwrjq";
+        private readonly string UserPAT; 
         string dynamicQuery = @"SELECT [System.Id] FROM workitems 
                                 WHERE [System.WorkItemType] IN GROUP 'Microsoft.TestCaseCategory' 
                                 AND [Id] = 88720 ";
